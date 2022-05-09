@@ -16,7 +16,7 @@
 			<div class="shadow card">
 				<div class="card-body">
 					<h2 class="card-title">Dark Mode</h2>
-					<input type="checkbox" class="toggle toggle-primary" data-toggle-theme="dark,light" />
+					<input type="checkbox" class="toggle toggle-primary" data-toggle-theme="light,dark" />
 					<p>change for toggle dark mode</p>
 				</div>
 			</div>
@@ -25,6 +25,7 @@
 				<RouterLink to="/">Home</RouterLink>
 				<RouterLink to="/about">About</RouterLink>
 				<RouterLink to="/contact">Contact</RouterLink>
+				<RouterLink to="/photos">Photos</RouterLink>
 			</nav>
 		</div>
 	</header>

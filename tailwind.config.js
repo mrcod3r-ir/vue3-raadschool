@@ -19,6 +19,6 @@ module.exports = {
     // rtl: true,
     prefix: "",
     themes: ["light", "dark"],
-    darkTheme: "dark",
+    // darkTheme: "dark",
   },
 }
