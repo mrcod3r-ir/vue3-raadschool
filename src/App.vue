@@ -1,6 +1,11 @@
 <script setup>
 	import { RouterLink, RouterView } from "vue-router"
 	import HelloWorld from "@/components/HelloWorld.vue"
+	import { onMounted } from "vue"
+	import { themeChange } from "theme-change"
+	onMounted(() => {
+		themeChange(false)
+	})
 </script>
 
 <template>
@@ -8,8 +13,14 @@
 		<img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
 		<div class="wrapper">
+			<div class="shadow card">
+				<div class="card-body">
+					<h2 class="card-title">Dark Mode</h2>
+					<input type="checkbox" class="toggle toggle-primary" data-toggle-theme="dark,light" />
+					<p>change for toggle dark mode</p>
+				</div>
+			</div>
 			<HelloWorld msg="You did it!" />
-
 			<nav>
 				<RouterLink to="/">Home</RouterLink>
 				<RouterLink to="/about">About</RouterLink>
