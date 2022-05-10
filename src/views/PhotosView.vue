@@ -16,11 +16,19 @@
 			}
 		},
 		mounted() {
-			fetch("https://jsonplaceholder.typicode.com/photos")
-				.then((res) => res.json())
-				.then((res) => {
-					this.photos = res.splice(0, 100)
+			// fetch("https://jsonplaceholder.typicode.com/photos")
+			// 	.then((res) => res.json())
+			// 	.then((res) => {
+			// 		this.photos = res.splice(0, 100)
+			// 	})
+			this.getPhotos()
+		},
+		methods: {
+			getPhotos() {
+				this.axios.get("https://jsonplaceholder.typicode.com/photos").then((res) => {
+					this.photos = res.data.splice(0, 100)
 				})
+			}
 		}
 	}
 </script>
