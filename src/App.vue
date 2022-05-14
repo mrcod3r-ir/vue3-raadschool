@@ -3,6 +3,7 @@
 	import HelloWorld from "@/components/HelloWorld.vue"
 	import { onMounted, reactive } from "vue"
 	import { themeChange } from "theme-change"
+	import { HomeIcon, AnnotationIcon, ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/vue/solid"
 	import Navbar from "@/components/Navbar.vue"
 	const data = reactive({
 		sidebar: false
@@ -29,20 +30,26 @@
 			</main>
 			<footer></footer>
 		</div>
-		<div :class="['drawer-side transition-all', data.sidebar ? 'w-60' : 'w-24']">
+		<div :class="['drawer-side transition-all relative', data.sidebar ? 'w-60' : 'w-16']">
 			<ul class="menu p-4 overflow-y-auto w-full bg-base-100 text-base-content bg-slate-700 text-slate-300 overflow-x-hidden">
 				<!-- Sidebar content here -->
 				<li>
-					<RouterLink to="/">Home</RouterLink>
+					<RouterLink class="px-0" to="">
+						<ChevronDoubleRightIcon v-if="data.sidebar" class="w-5 h-5" />
+						<ChevronDoubleLeftIcon v-else class="w-5 h-5" />
+					</RouterLink>
 				</li>
 				<li>
-					<RouterLink to="/about">About</RouterLink>
+					<RouterLink class="px-0" to="/"><HomeIcon class="h-5 w-5" /><span v-if="data.sidebar">Home</span></RouterLink>
 				</li>
 				<li>
-					<RouterLink to="/contact">Contact</RouterLink>
+					<RouterLink class="px-0" to="/about"><AnnotationIcon class="h-5 w-5" /><span v-if="data.sidebar">About</span></RouterLink>
 				</li>
 				<li>
-					<RouterLink to="/photos">Photos</RouterLink>
+					<RouterLink class="px-0" to="/contact"><span v-if="data.sidebar">Contact</span></RouterLink>
+				</li>
+				<li>
+					<RouterLink class="px-0" to="/photos"><span v-if="data.sidebar">Photos</span></RouterLink>
 				</li>
 			</ul>
 		</div>
