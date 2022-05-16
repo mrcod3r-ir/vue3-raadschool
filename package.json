@@ -7,6 +7,7 @@
     "preview": "vite preview --port 5050"
   },
   "dependencies": {
+    "@fontsource/vazirmatn": "^4.5.1",
     "@heroicons/vue": "^1.0.6",
     "axios": "^0.27.2",
     "daisyui": "^2.14.3",
