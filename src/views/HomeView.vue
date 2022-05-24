@@ -8,7 +8,10 @@
 		حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
 	</p>
 	<br />
-	<NumberPicker v-model="counter" />
+
+	<NumberPicker v-model:modelValue="counter" v-model:modelCity="city" />
+	<br />
+	<small>the city is : {{ city }}</small>
 </template>
 <script>
 	import NumberPicker from "../components/NumberPicker.vue"
@@ -16,7 +19,8 @@
 		components: { NumberPicker },
 		data() {
 			return {
-				counter: 0
+				counter: 0,
+				city: "Qom"
 			}
 		}
 	}
