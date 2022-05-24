@@ -7,4 +7,22 @@
 		رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل
 		حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
 	</p>
+	<br />
+	<NumberPicker :value="counter" @change="onValueChange" />
 </template>
+<script>
+	import NumberPicker from "../components/NumberPicker.vue"
+	export default {
+		components: { NumberPicker },
+		data() {
+			return {
+				counter: 0
+			}
+		},
+		methods: {
+			onValueChange(value) {
+				this.counter = value
+			}
+		}
+	}
+</script>
