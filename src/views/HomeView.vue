@@ -8,7 +8,7 @@
 		حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
 	</p>
 	<br />
-	<NumberPicker :value="counter" @change="onValueChange" />
+	<NumberPicker :modelValue="counter" @update:modelValue="onValueChange" />
 </template>
 <script>
 	import NumberPicker from "../components/NumberPicker.vue"

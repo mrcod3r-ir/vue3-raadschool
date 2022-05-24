@@ -1,13 +1,14 @@
 <template>
-	<div><button class="btn mx-3" @click="plus">+</button>{{ counter }}<button class="btn mx-3" @click="minus">-</button></div>
+	<div><button class="btn mx-3" @click="plus">+</button>{{ modelValue }}<button class="btn mx-3" @click="minus">-</button></div>
 </template>
 
 <script lang="ts">
 	import { defineComponent } from "vue"
 	export default defineComponent({
 		props: {
-			value: { type: Number, default: 0 }
+			modelValue: { type: Number, default: 0 }
 		},
+		emits: ["update:modelValue"],
 		data() {
 			return {
 				counter: this.value
@@ -15,13 +16,11 @@
 		},
 		methods: {
 			plus() {
-				this.counter++
-				this.$emit("change", this.counter)
+				this.$emit("update:modelValue", this.modelValue + 1)
 			},
 			minus() {
-				if (this.counter !== 0) {
-					this.counter--
-					this.$emit("change", this.counter)
+				if (this.modelValue !== 0) {
+					this.$emit("update:modelValue", this.modelValue - 1)
 				}
 			}
 		}
