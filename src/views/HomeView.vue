@@ -12,11 +12,14 @@
 	<NumberPicker v-model:modelValue="counter" v-model:modelCity="city" />
 	<br />
 	<small>the city is : {{ city }}</small>
+	<br />
+	<Counter />
 </template>
 <script>
 	import NumberPicker from "../components/NumberPicker.vue"
+	import Counter from "../components/Counter.vue"
 	export default {
-		components: { NumberPicker },
+		components: { NumberPicker, Counter },
 		data() {
 			return {
 				counter: 0,
