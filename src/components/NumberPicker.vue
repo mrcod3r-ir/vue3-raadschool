@@ -12,23 +12,21 @@
 			modelCity: { type: String, default: "Qom" }
 		},
 		emits: ["update:modelValue", "update:modelCity"],
-		data() {
-			return {
-				counter: this.value
+
+		setup(props, { emit }) {
+			const plus = () => {
+				emit("update:modelValue", props.modelValue + 1)
 			}
-		},
-		methods: {
-			plus() {
-				this.$emit("update:modelValue", this.modelValue + 1)
-			},
-			minus() {
-				if (this.modelValue !== 0) {
-					this.$emit("update:modelValue", this.modelValue - 1)
+			const minus = () => {
+				if (props.modelValue != 0) {
+					emit("update:modelValue", props.modelValue - 1)
 				}
-			},
-			changeCity() {
-				this.$emit("update:modelCity", "Tehran")
 			}
+			const changeCity = () => {
+				emit("update:modelCity", "Tehran")
+			}
+
+			return { plus, minus, changeCity }
 		}
 	})
 </script>
